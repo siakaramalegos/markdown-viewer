@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Marked Demo</title>
+	<style type="text/css">
+		body {
+			margin: 0 auto;
+			height: 100%;
+			font-family: 'Helvetica Neue', Arial, sans-serif;
+			color: #333;
+		}
+		#editor,
+		#compiled-markdown {
+			display: inline-block;
+			width: 49%;
+			height: 100vh;
+			vertical-align: top;
+			box-sizing: border-box;
+			padding: 0 1.5em;
+		}
+		#editor {
+			border: none;
+			border-right: 1px solid #ccc;
+			resize: none;
+			outline: none;
+			background-color: #f6f6f6;
+			font-size: 1em;
+			font-family: 'Monaco', courier, monospace;
+			padding: 1.5em;
+		}
+		code {
+		  color: #f66;
+		}
+	</style>
+</head>
+<body>
+	<textarea id="editor" autofocus></textarea>
+	<div id="compiled-markdown"></div>
+
+	<script src="https://unpkg.com/marked@0.3.6"></script>
+	<script>
+		// Get the compiled markdown container
+		var compiled = document.querySelector('#compiled-markdown');
+		// Listen for changes to inputs and textareas
+		document.addEventListener('input', function (event) {
+			// Only run if the change happened in the #editor
+			if (!event.target.matches('#editor')) return;
+			compiled.innerHTML = marked(event.target.value, { sanitize: true });
+		}, false);
+	</script>
+</body>
+</html>
