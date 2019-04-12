@@ -80,8 +80,6 @@ article {
 article img {
   width: 100%;
   max-width: 500px;}
-/* article div:first-of-type {
-  padding-right: 4em;} */
 article div.spacer { width: 4em; }
 article p {
   font-size: 1.5em;}
