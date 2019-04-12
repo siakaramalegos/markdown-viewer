@@ -7,9 +7,65 @@
     <title>Vanilla JS Markdown Viewer</title>
   </head>
   <body>
-    <noscript>This site only works with JavaScript enabled. :(</noscript>
-    <textarea id="editor" autofocus></textarea>
-    <div id="compiled-markdown"></div>
-    <p>Photo by <a href="https://unsplash.com/photos/4dpAqfTbvKA">Jeremy Thomas</a> on <a href="https://unsplash.com">Unsplash</a></p>
+    <div class="container">
+      <noscript>This site only works with JavaScript enabled. :(</noscript>
+
+      <div class="header">
+        <img width="128px" src="./src/images/Code-Optimization-256x256.png">
+        <h1 class="title">Markdown Viewer</h1>
+        <h2 class="subtitle">Chicharrones fingerstache try-hard disrupt</h2>
+      </div>
+
+      <main>
+        <p>Hipster ipsum dolor amet ethical sriracha brunch, kombucha yuccie vinyl vexillologist sustainable distillery schlitz kogi meh fashion axe raclette activated charcoal. Before they sold out venmo edison bulb hot chicken. </p>
+
+        <p>Selfies fixie banjo edison bulb, unicorn butcher jianbing quinoa viral typewriter hexagon asymmetrical YOLO listicle. Lyft wayfarers swag helvetica 3 wolf moon man bun waistcoat. Meggings messenger bag activated charcoal, snackwave humblebrag truffaut gochujang man braid waistcoat health goth vaporware.</p>
+
+        <article>
+          <div>
+            <img src="./src/images/luca-bravo-217276-unsplash.jpg" alt="Dark laptop showing a code editor and code">
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <p>Everyday carry keffiyeh typewriter, cardigan direct trade blue bottle iceland heirloom vape.</p>
+            <p>Photo by <a
+                href="https://unsplash.com/photos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca
+                Bravo on Unsplash</a>.</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <img src="./src/images/christopher-gower-291246-unsplash.jpg" alt="Laptop on a desk in a bright office">
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <p>Literally kombucha tacos, hot chicken tattooed try-hard pop-up synth mumblecore letterpress fam celiac.</p>
+            <p>Photo by <a
+                href="https://unsplash.com/photos/m_HRfLhgABo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christopher
+                Gower on Unsplash</a>.</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <img src="./src/images/anas-alshanti-169265-unsplash.jpg" alt="Keyboard close up of keycaps with hot pink lighting">
+          </div>
+          <div class="spacer"></div>
+          <div>
+            <p>Snackwave plaid normcore humblebrag, fashion axe narwhal authentic banh mi pork belly.</p>
+            <p>Photo by <a
+                href="https://unsplash.com/photos/feXpdV001o4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anas Alshanti on Unsplash</a>.</p>
+          </div>
+        </article>
+
+
+        <!-- Markdown viewer -->
+        <textarea id="editor" autofocus></textarea>
+        <div id="compiled-markdown"></div>
+
+      </main>
+    </div>
+
   </body>
 </html>
