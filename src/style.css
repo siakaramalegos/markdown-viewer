@@ -27,6 +27,10 @@ html {
 body {
   margin: 0;
   height: 100%;}
+.hide {
+  display: none;}
+.show {
+  display: block;}
 
 /* Overall layout */
 .container {
@@ -91,6 +95,17 @@ article p {
   article img {
     width: 500px;}
 }
+
+/* Button */
+button {
+  background-color: rebeccapurple;
+  border: none;
+  color: white;
+  font-size: 1em;
+  margin: 20px 0;
+  padding: 10px;}
+button:hover {
+  background-color: #4b1a7f;}
 
 /* Markdown viewer */
 #editor,
