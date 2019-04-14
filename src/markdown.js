@@ -1,16 +1,13 @@
 import marked from 'marked';
+import { timeNowPretty } from './time';
 // import { isEmpty } from 'lodash';
-// import moment from 'moment';
-// import { addMinutes } from 'date-fns';
-
-// console.log(isEmpty({}));
 
 export const initializeMarkdown = () => {
-  // Get the compiled markdown container
-  const compiled = document.querySelector('#compiled-markdown');
+  const compiled = document.getElementById('compiled-markdown');
+  const lastEdit = document.getElementById('last-edit')
 
-  // Listen for changes to textarea
   document.getElementById('editor').oninput = function (event) {
     compiled.innerHTML = marked(event.target.value, { sanitize: true });
+    lastEdit.innerHTML = 'Last updated: ' + timeNowPretty()
   };
 }

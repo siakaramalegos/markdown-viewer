@@ -127,3 +127,6 @@ button:hover {
   padding: 1.5em;}
 code {
   color: #f66;}
+#last-edit {
+  font-style: italic;
+  text-align: right;}
