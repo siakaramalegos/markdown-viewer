@@ -1,9 +1,7 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-
 /* Local font roboto-mono-regular - latin */
 @font-face {
   font-family: 'Roboto Mono';
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: local('Roboto Mono'), local('RobotoMono-Regular'),
@@ -12,6 +10,7 @@
 /* Local font roboto-mono-italic - latin */
 @font-face {
   font-family: 'Roboto Mono';
+  font-display: swap;
   font-style: italic;
   font-weight: 400;
   src: local('Roboto Mono Italic'), local('RobotoMono-Italic'),
