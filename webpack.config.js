@@ -18,7 +18,7 @@ module.exports = {
         use: {
           loader: 'html-loader-srcset',
           options: {
-            attrs: ['img:src', 'img:srcset', 'source:srcset']
+            attrs: ['img:src', 'img:srcset', 'source:srcset', ':data-src', ':data-srcset']
           }
         }
       },

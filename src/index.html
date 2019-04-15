@@ -32,13 +32,15 @@
             <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
               <source
-                srcset="./images/code_250.webp 250w,
+                data-srcset="./images/code_250.webp 250w,
                   ./images/code_500.webp 500w,
                   ./images/code_1000.webp 1000w"
+                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
                 type="image/webp" />
-              <img
-                src="./images/code_500.jpg"
-                srcset="./images/code_250.jpg 250w,
+              <img class="lazyload"
+                src="./images/placeholder_500x333.svg"
+                data-src="./images/code_500.jpg"
+                data-srcset="./images/code_250.jpg 250w,
                   ./images/code_500.jpg 500w,
                   ./images/code_1000.jpg 1000w"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
@@ -59,13 +61,15 @@
             <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
               <source
-                srcset="./images/desk_250.webp 250w,
+                data-srcset="./images/desk_250.webp 250w,
                         ./images/desk_500.webp 500w,
                         ./images/desk_1000.webp 1000w"
+                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
                 type="image/webp" />
-              <img
-                src="./images/desk_500.jpg"
-                srcset="./images/desk_250.jpg 250w,
+              <img class="lazyload"
+                src="./images/placeholder_500x333.svg"
+                data-src="./images/desk_500.jpg"
+                data-srcset="./images/desk_250.jpg 250w,
                         ./images/desk_500.jpg 500w,
                         ./images/desk_1000.jpg 1000w"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
@@ -86,13 +90,15 @@
             <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
               <source
-                srcset="./images/keyboard_250.webp 250w,
+                data-srcset="./images/keyboard_250.webp 250w,
                         ./images/keyboard_500.webp 500w,
                         ./images/keyboard_1000.webp 1000w"
+                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
                 type="image/webp" />
-              <img
-                src="./images/keyboard_500.jpg"
-                srcset="./images/keyboard_250.jpg 250w,
+              <img class="lazyload"
+                src="./images/placeholder_500x333.svg"
+                data-src="./images/keyboard_500.jpg"
+                data-srcset="./images/keyboard_250.jpg 250w,
                         ./images/keyboard_500.jpg 500w,
                         ./images/keyboard_1000.jpg 1000w"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
