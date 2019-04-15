@@ -47,8 +47,7 @@ body {
   margin: 21px 20px 0 0;}
 @media (min-width: 1180px) {
   .container {
-    padding: 0;
-  }
+    padding: 0;}
 }
 
 /* Typography */
@@ -143,10 +142,25 @@ code {
 /* Footer */
 footer {
   /* Gradient generated from https://www.louisbourque.ca/Color-Extractor/ */
-  /* background-image: linear-gradient(to right, #614d72 0%, #74618b 50%, #4d3f68 75%, #292643 100%); */
-  background: url('./images/galaxy.jpg') center center no-repeat;
+  background-image: linear-gradient(to right, #614d72 0%, #74618b 50%, #4d3f68 75%, #292643 100%);
+  background: url('./images/galaxy_360.jpg') center center no-repeat;
   background-size: cover;
   color: white;
   padding: 2em;}
 .inner-container {
   padding: 1em;}
+@media (min-resolution: 2dppx), (min-width: 720px) {
+  footer {
+    background-image: url('./images/galaxy_720.jpg');}}
+@media (min-width: 720px) and (min-resolution: 2ddpx) {
+  footer {
+    background-image: url('./images/galaxy_1366.jpg');}}
+@media (min-width: 1366px) {
+  footer {
+    background-image: url('./images/galaxy_1366.jpg');}}
+@media (min-width: 1366px) and (min-resolution: 2ddpx) {
+  footer {
+    background-image: url('./images/galaxy_1920.jpg');}}
+@media (min-width: 1920px) {
+  footer {
+    background-image: url('./images/galaxy_1920.jpg');}}
