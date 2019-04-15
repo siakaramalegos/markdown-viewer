@@ -1,5 +1,6 @@
 import marked from 'marked';
 import { timeNowPretty } from './time';
+// We are using this contrived Lodash example to learn about importing correctly. IRL, we should also consider whether a library is needed at all.
 import { isEmpty } from 'lodash';
 
 export const initializeMarkdown = () => {

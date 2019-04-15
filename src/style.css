@@ -60,6 +60,8 @@ body {
   color: #555;
   font-weight: normal;
   margin-top: 0;}
+.highlighter {
+  background-color: rgba(0,0,0,0.5);}
 
 /* links */
 a {
@@ -71,10 +73,16 @@ a {
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
+footer a {
+  color: rgb(224, 214, 235);
+  border-bottom: 1px solid rebeccapurple;
+  box-shadow: rebeccapurple 0px -2px 0px 0px inset;}
 a:hover {
   background: rgb(224, 214, 235);
   text-shadow: none;
   border: none; }
+footer a:hover {
+  background: rebeccapurple;}
 
 /* article */
 article {
@@ -101,8 +109,9 @@ button {
   background-color: rebeccapurple;
   border: none;
   color: white;
+  display: block;
   font-size: 1em;
-  margin: 20px 0;
+  margin: 0 auto 40px;
   padding: 10px;}
 button:hover {
   background-color: #4b1a7f;}
@@ -128,5 +137,17 @@ button:hover {
 code {
   color: #f66;}
 #last-edit {
+  color: #666666;
   font-style: italic;
   text-align: right;}
+
+/* Footer */
+footer {
+  /* Gradient generated from https://www.louisbourque.ca/Color-Extractor/ */
+  /* background-image: linear-gradient(to right, #614d72 0%, #74618b 50%, #4d3f68 75%, #292643 100%); */
+  background: url('./images/galaxy.jpg') center center no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 2em;}
+.inner-container {
+  padding: 1em;}
