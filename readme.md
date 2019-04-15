@@ -2,7 +2,7 @@
 
 This application was built with love to teach developers about web performance. The `master` branch is the unoptimized state and is deployed at https://turtle-markdown-viewer.netlify.com/. Branches were created for each optimization step:
 
-- `0-`
+- `0-low-hanging-fruit`
 - `1-`
 - `2-`
 
