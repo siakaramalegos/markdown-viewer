@@ -4,7 +4,7 @@ This application was built with love to teach developers about web performance. 
 
 - `0-fonts`
 - `1-images`
-- `3-smaller-dependencies`
+- `2-smaller-dependencies`
 
 ## About the trainer
 
