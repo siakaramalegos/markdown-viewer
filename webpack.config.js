@@ -15,7 +15,12 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader-srcset'
+        use: {
+          loader: 'html-loader-srcset',
+          options: {
+            attrs: ['img:src', 'img:srcset', 'source:srcset']
+          }
+        }
       },
       {
         test: /\.m?js$/,
@@ -27,7 +32,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|webp)$/,
         use: ['file-loader']
       },
       {
