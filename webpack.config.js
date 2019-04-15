@@ -5,6 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -65,6 +66,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
     }),
+    new CompressionPlugin(),
   ],
   devtool: 'source-map',
   devServer: {
