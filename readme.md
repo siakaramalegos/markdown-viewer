@@ -6,6 +6,8 @@ This application was built with love to teach developers about web performance. 
 - `1-images`
 - `2-smaller-dependencies`
 - `3-low-hanging-fruit`
+- `4-code-splitting`
+- `5-modern-code`
 
 ## About the trainer
 
