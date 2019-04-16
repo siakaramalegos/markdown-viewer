@@ -2,8 +2,8 @@ import { timeNowPretty } from './time';
 
 async function loadMarkdownDeps() {
   // Dynamically import lodash/isEmpty and marked
-  const { default: isEmpty } = await import('lodash/isEmpty' /* webpackChunkName: "lodash/isEmpty" */)
-  const { default: marked } = await import('marked' /* webpackChunkName: "marked" */)
+  const { default: isEmpty } = await import('lodash/isEmpty' /* webpackChunkName: "lodash/isEmpty", webpackPrefetch: true */)
+  const { default: marked } = await import('marked' /* webpackChunkName: "marked", webpackPrefetch: true */)
 
   return { isEmpty, marked }
 }
