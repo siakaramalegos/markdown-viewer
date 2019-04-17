@@ -1,7 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
 const legacyConfig = merge(common, {
@@ -21,8 +20,10 @@ const legacyConfig = merge(common, {
               [
                 "@babel/preset-env",
                 {
+                  corejs: 3,
+                  modules: false,
                   useBuiltIns: "usage",
-                  targets: { esmodules: false }
+                  targets: "last 2 versions, > 0.2%, not dead"
                 }
               ]
             ],
@@ -35,14 +36,14 @@ const legacyConfig = merge(common, {
       },
     ],
   },
-  // optimization: {
-  //   minimizer: [new OptimizeCSSAssetsPlugin({}), new TerserJSPlugin({})],
-  // },
+  optimization: {
+    minimizer: [new TerserJSPlugin({})],
+  },
 })
 
 const modernConfig = merge(common, {
   output: {
-    filename: '[name].mjs.js',
+    filename: '[name].mjs',
     path: path.resolve('./dist')
   },
   module: {
@@ -57,7 +58,9 @@ const modernConfig = merge(common, {
               [
                 "@babel/preset-env",
                 {
-                  useBuiltIns: "usage",
+                  // corejs: 3,
+                  modules: false,
+                  // useBuiltIns: "usage",
                   targets: { esmodules: true }
                 }
               ]
@@ -71,17 +74,16 @@ const modernConfig = merge(common, {
       },
     ],
   },
-  // optimization: {
-  //   minimizer: [
-  //     new OptimizeCSSAssetsPlugin({}),
-  //     new TerserJSPlugin({
-  //       test: /\.m?js(\?.*)?$/i,
-  //       terserOptions: {
-  //         ecma: 6 // This can be set to 7 or 8, too.
-  //       }
-  //     }),
-  //   ],
-  // },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({
+        test: /\.m?js(\?.*)?$/i,
+        terserOptions: {
+          ecma: 6 // This can be set to 7 or 8, too.
+        }
+      }),
+    ],
+  },
 })
 
 module.exports = [ legacyConfig, modernConfig ]
