@@ -1,78 +1,87 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const merge = require('webpack-merge')
+const common = require('./webpack.common.js')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 
-module.exports = {
-  entry: {
-    main: './src/index.js'
-  },
+const legacyConfig = merge(common, {
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].js',
     path: path.resolve('./dist')
   },
   module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.m?js$/,
+        exclude: [/node_modules/],
         use: {
-          loader: 'html-loader-srcset',
+          loader: 'babel-loader',
           options: {
-            attrs: ['img:src', 'img:srcset', 'source:srcset', ':data-src', ':data-srcset']
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: "usage",
+                  targets: { esmodules: false }
+                }
+              ]
+            ],
+            plugins: [
+              "@babel/plugin-syntax-dynamic-import",
+              "@babel/plugin-transform-runtime"
+            ]
           }
         }
       },
+    ],
+  },
+  // optimization: {
+  //   minimizer: [new OptimizeCSSAssetsPlugin({}), new TerserJSPlugin({})],
+  // },
+})
+
+const modernConfig = merge(common, {
+  output: {
+    filename: '[name].mjs.js',
+    path: path.resolve('./dist')
+  },
+  module: {
+    rules: [
       {
         test: /\.m?js$/,
         exclude: [/node_modules/],
-        use: ['babel-loader']
-      },
-      {
-        test: /\.css$/,
-        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader' ]
-      },
-      {
-        test: /\.(png|jpg|gif|svg|webp)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: {
-          loader: 'file-loader',
+          loader: 'babel-loader',
           options: {
-            name: 'fonts/[name].[ext]'
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: "usage",
+                  targets: { esmodules: true }
+                }
+              ]
+            ],
+            plugins: [
+              "@babel/plugin-syntax-dynamic-import",
+              "@babel/plugin-transform-runtime"
+            ]
           }
         }
-      }
-    ]
+      },
+    ],
   },
-  optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-  },
-  plugins: [
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerMode: 'static',
-      logLevel: 'warn'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    }),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-    }),
-    new CompressionPlugin(),
-  ],
-  devtool: process.env.NODE_ENV === 'production' ? 'none' : 'source-map',
-  devServer: {
-    host: 'localhost',
-    port: 3000,
-    historyApiFallback: true,
-    open: true
-  }
-};
+  // optimization: {
+  //   minimizer: [
+  //     new OptimizeCSSAssetsPlugin({}),
+  //     new TerserJSPlugin({
+  //       test: /\.m?js(\?.*)?$/i,
+  //       terserOptions: {
+  //         ecma: 6 // This can be set to 7 or 8, too.
+  //       }
+  //     }),
+  //   ],
+  // },
+})
+
+module.exports = [ legacyConfig, modernConfig ]
