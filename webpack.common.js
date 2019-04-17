@@ -44,7 +44,7 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-      openAnalyzer: true,
+      openAnalyzer: false,
       analyzerMode: 'static',
       logLevel: 'warn'
     }),

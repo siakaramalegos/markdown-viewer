@@ -1,6 +1,8 @@
 const path = require('path');
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
+const babelLegacy = require('./babel.legacy.js')
+const babelModern = require('./babel.modern.js')
 const TerserJSPlugin = require('terser-webpack-plugin');
 
 const legacyConfig = merge(common, {
@@ -15,23 +17,7 @@ const legacyConfig = merge(common, {
         exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                "@babel/preset-env",
-                {
-                  corejs: 3,
-                  modules: false,
-                  useBuiltIns: "usage",
-                  targets: "last 2 versions, > 0.2%, not dead"
-                }
-              ]
-            ],
-            plugins: [
-              "@babel/plugin-syntax-dynamic-import",
-              "@babel/plugin-transform-runtime"
-            ]
-          }
+          options: babelLegacy,
         }
       },
     ],
@@ -53,23 +39,7 @@ const modernConfig = merge(common, {
         exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                "@babel/preset-env",
-                {
-                  // corejs: 3,
-                  modules: false,
-                  // useBuiltIns: "usage",
-                  targets: { esmodules: true }
-                }
-              ]
-            ],
-            plugins: [
-              "@babel/plugin-syntax-dynamic-import",
-              "@babel/plugin-transform-runtime"
-            ]
-          }
+          options: babelModern,
         }
       },
     ],
