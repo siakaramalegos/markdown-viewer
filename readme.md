@@ -1,6 +1,11 @@
 # Markdown Viewer in vanilla JS
 
-This application was built with love to teach developers about web performance. The `master` branch is the unoptimized state and is deployed at https://turtle-markdown-viewer.netlify.com/. Branches were created for each optimization step:
+This application was built with love to teach developers about web performance.
+
+- The `master` branch is the unoptimized state and is deployed at https://turtle-markdown-viewer.netlify.com/.
+- The `5-modern-code` branch includes all the optimizations from previous steps and is deployed at https://hare-markdown-viewer.netlify.com/.
+
+Branches were created for each optimization step:
 
 - `0-fonts`
 - `1-images`
