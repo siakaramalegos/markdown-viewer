@@ -15,7 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader-srcset'
       },
       {
         test: /\.m?js$/,
@@ -28,7 +28,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader']
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]'
+          }
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
