@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: {
@@ -60,7 +61,7 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-      openAnalyzer: false,
+      openAnalyzer: devMode ? false : true,
       analyzerMode: 'static',
       logLevel: 'warn'
     }),
@@ -73,7 +74,7 @@ module.exports = {
     }),
     new CompressionPlugin(),
   ],
-  devtool: process.env.NODE_ENV === 'production' ? 'none' : 'source-map',
+  devtool: devMode ? 'source-map' : 'none',
   devServer: {
     host: 'localhost',
     port: 3000,
