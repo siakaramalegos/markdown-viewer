@@ -7,6 +7,7 @@ This application was built with love to teach developers about web performance. 
 - `1a-images` (image exercise 1)
 - `1b-images` (image exercise 2)
 - `1c-images` (image exercise 3)
+- `1d-images` (image exercise 4)
 - `2-`
 
 ## About the trainer
