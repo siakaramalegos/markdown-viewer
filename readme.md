@@ -3,7 +3,11 @@
 This application was built with love to teach developers about web performance. The `master` branch is the unoptimized state and is deployed at https://turtle-markdown-viewer.netlify.com/. Branches were created for each optimization step:
 
 - `0-fonts`
-- `1-images`
+- `1-images` (all exercises)
+- `1a-images` (image exercise 1)
+- `1b-images` (image exercise 2)
+- `1c-images` (image exercise 3)
+- `1d-images` (image exercise 4)
 - `2-smaller-dependencies`
 - `3-low-hanging-fruit`
 - `4-code-splitting`

@@ -23,7 +23,7 @@ module.exports = {
           loader: 'html-loader-srcset',
           options: {
             attrs: ['img:src', 'img:srcset', 'source:srcset', ':data-src', ':data-srcset']
-          }
+          },
         }
       },
       {
@@ -37,7 +37,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|webp)$/,
-        use: ['file-loader']
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]'
+          }
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
