@@ -29,22 +29,17 @@
 
         <article>
           <div>
-            <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
-              <source
-                data-srcset="./images/code_250.webp 250w,
-                  ./images/code_500.webp 500w,
-                  ./images/code_1000.webp 1000w"
-                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                type="image/webp" />
-              <img class="lazyload"
+              <source type="image/webp"
+                data-srcset="./images/code_500.webp 500w,
+                        ./images/code_1000.webp 1000w">
+              <img data-src="./images/code_500.jpg"
+                data-srcset="./images/code_500.jpg 500w,
+                        ./images/code_1000.jpg 1000w"
                 src="./images/placeholder_500x333.svg"
-                data-src="./images/code_500.jpg"
-                data-srcset="./images/code_250.jpg 250w,
-                  ./images/code_500.jpg 500w,
-                  ./images/code_1000.jpg 1000w"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                alt="Dark laptop showing a code editor and code">
+                alt="Dark laptop showing a code editor and code"
+                class="lazyload">
             </picture>
           </div>
           <div class="spacer"></div>
@@ -58,22 +53,17 @@
 
         <article>
           <div>
-            <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
-              <source
-                data-srcset="./images/desk_250.webp 250w,
-                        ./images/desk_500.webp 500w,
-                        ./images/desk_1000.webp 1000w"
-                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                type="image/webp" />
-              <img class="lazyload"
-                src="./images/placeholder_500x333.svg"
-                data-src="./images/desk_500.jpg"
-                data-srcset="./images/desk_250.jpg 250w,
-                        ./images/desk_500.jpg 500w,
+              <source type="image/webp"
+                data-srcset="./images/desk_500.webp 500w,
+                        ./images/desk_1000.webp 1000w">
+              <img data-src="./images/desk_500.jpg"
+                data-srcset="./images/desk_500.jpg 500w,
                         ./images/desk_1000.jpg 1000w"
+                src="./images/placeholder_500x333.svg"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                alt="Laptop on a desk in a bright office">
+                alt="Laptop on a desk in a bright office"
+                class="lazyload">
             </picture>
           </div>
           <div class="spacer"></div>
@@ -87,22 +77,17 @@
 
         <article>
           <div>
-            <!-- For the sizes/slot width, you may provide an absolute length (px, em) or a length relative to the viewport (vw), but not percentages. Use RespImageLint to give you the calc since we use % in our CSS. -->
             <picture>
-              <source
-                data-srcset="./images/keyboard_250.webp 250w,
-                        ./images/keyboard_500.webp 500w,
-                        ./images/keyboard_1000.webp 1000w"
-                sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                type="image/webp" />
-              <img class="lazyload"
-                src="./images/placeholder_500x333.svg"
-                data-src="./images/keyboard_500.jpg"
-                data-srcset="./images/keyboard_250.jpg 250w,
-                        ./images/keyboard_500.jpg 500w,
+              <source type="image/webp"
+                data-srcset="./images/keyboard_500.webp 500w,
+                        ./images/keyboard_1000.webp 1000w">
+              <img data-src="./images/keyboard_500.jpg"
+                data-srcset="./images/keyboard_500.jpg 500w,
                         ./images/keyboard_1000.jpg 1000w"
+                src="./images/placeholder_500x333.svg"
                 sizes="(min-width: 580px) 500px, calc(92.31vw - 17px)"
-                alt="Keyboard close up of keycaps with hot pink lighting">
+                alt="Keyboard close up of keycaps with hot pink lighting"
+                class="lazyload">
             </picture>
           </div>
           <div class="spacer"></div>
