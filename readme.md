@@ -11,7 +11,8 @@ This application was built with love to teach developers about web performance. 
 - `2-smaller-dependencies`
 - `3-low-hanging-fruit`
 - `4-code-splitting`
-- `5-modern-code`
+- `5-modern-code` (all changes)
+- `5a-modern-code` (add polyfills and split webpack config)
 
 ## About the trainer
 
