@@ -1,4 +1,4 @@
-import "@babel/polyfill";
+// import 'core-js';
 import './style.css';
 import { initializeMarkdown } from './markdown';
 import 'lazysizes';
